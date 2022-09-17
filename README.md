@@ -1,11 +1,11 @@
 # Informative Language Representation Learning for Massively Multilingual Neural Machine Translation.
 
-[**Paper**](https://arxiv.org/abs/2209.01530)
-[**Requirements**](#Requirements)
-[**Fairseq Installation**](#Fairseq-Installation)
-[**Data Preprocessing**](#Data-Preprocessing)
-[**Model Training**](#Model-Training)
-[**Evaluation**](#Evaluation)
+[**Paper**](https://arxiv.org/abs/2209.01530) |
+[**Requirements**](#Requirements) |
+[**Fairseq Installation**](#Fairseq-Installation) |
+[**Data Preprocessing**](#Data-Preprocessing) |
+[**Model Training**](#Model-Training) |
+[**Evaluation**](#Evaluation) |
 [**Citation**](#Citation)
 
 
