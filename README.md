@@ -16,7 +16,7 @@
 
 
 ## Fairseq Installation
-We build the multilingual neural machine translation models base on Fairseq library. Please install it first:
+We build the multilingual neural machine translation models based on Fairseq library. Please install it first:
 ```bash
 cd fairseq
 pip install -e ./
@@ -37,62 +37,70 @@ scripts/opus-100/data_process/multilingual_preprocess.sh
 ```
 
 ## Model Training
-Once the data has been preprocessed, the multilingual neural machine translation models can be trained with the shell scripts in the `scripts/opus-100/train` and `scripts/ted/train` directories. In practice, the model can be trained by executing the script when all the variables in the script are properly set:
+Once the data has been preprocessed, the multilingual neural machine translation models can be trained with the shell scripts in the `scripts/opus-100/train` and `scripts/ted/train` folders. Note that please set the variables in these scripts properly before executing them:
 ```bash
 bash scripts/opus-100/train/fairseq_train.many-many.laa.sh
 ```
-The training for other models (e.g., token_src, token_tgt, lee) can be done in similar way, please refer `scripts/opus-100/train` and `scripts/ted/train` directories for more details.
+The training for other models (e.g., token_src, token_tgt, lee) can be done in similar way, please refer `scripts/opus-100/train` and `scripts/ted/train` folders for more details.
 
 ## Evaluation
 The evaluation pipeline is composed of three steps:
 
-1. Translating the validation sets (only for supervised language pairs) with the saved checkpoints
+1. Translate the validation sets (only for supervised language pairs) with the saved checkpoints
 ```bash
 bash scripts/opus-100/evaluation/eval.valid.many-many.laa.sh
 ```
 
 
-2. Selecting the best checkpoint according to the average BLEU on the validation sets
+2. Select the best checkpoint according to the average BLEU on the validation sets
 ```bash
-# calculating BLEU score
+# calculate BLEU score
 bash scripts/opus-100/evaluation/report_bleu.valid.many-many.laa.sh > report_bleu.valid.many-many.laa.logs
 
-# setting the --input and --output_json_data arguments first, then saving the report_bleu.valid.many-many.laa.logs as json format
+# convert report_bleu.valid.many-many.laa.logs into json format
+# --input denotes the path of report_bleu.valid.many-many.laa.logs
+# --output_json_data denotes the path of the output json file
 bash scripts/opus-100/evaluation/multilingual_bleu_statistics.sh
 
-# setting the --valid_bleu_statistic argument first, then computing BLEU for each checkpoint.
-# The checkpoints will be printed in descending order of average BLEU.
-# The first checkpoint will be chosen as the best checkpoint.
+# report the average BLEU score for each checkpoint
+# the checkpoints will be printed in descending order of average BLEU
+# the checkpoint with the highest average BLEU is chosen as the best checkpoint in our work
 bash scripts/opus-100/evaluation/get_best_checkpoint.sh
 ```
 
 
-3. Translating the test sets with the chosen checkpoint for both supervised and zero-shot translation
+3. Translate the test sets with the chosen checkpoint for both supervised and zero-shot translation
 
 For supervised translation:
 ```bash
-# translating the test sets
+# translate the test sets of supervised language pairs
 bash scripts/opus-100/evaluation/eval.test.many-many.laa.sh
 
-# calculating BLEU score
+# calculate BLEU score
 bash scripts/opus-100/evaluation/report_bleu.test.many-many.laa.sh > report_bleu.test.many-many.laa.logs
 
-# setting the --input and --output_json_data arguments first, then saving the report_bleu.test.many-many.laa.logs as json format
+# convert report_bleu.test.many-many.laa.logs into json format
+# --input denotes the path of report_bleu.test.many-many.laa.logs
+# --output_json_data denotes the path of the output json file
 bash scripts/opus-100/evaluation/multilingual_bleu_statistics.sh
 ```
 
 For zero-shot translation
 ```bash
-# translating the test sets
+# translate the test sets of zero-shot language pairs
 bash scripts/opus-100/evaluation/eval.zero-shot.many-many.laa.sh
 
-# calculating BLEU score
+# calculate BLEU score
 bash scripts/opus-100/evaluation/report_bleu.zero-shot.many-many.laa.sh > report_bleu.zero-shot.many-many.laa.logs
 
-# setting the --input and --output_json_data arguments first, then saving the report_bleu.zero-shot.many-many.laa.logs as json format
+# convert report_bleu.zero-shot.many-many.laa.logs into json format
+# --input denotes the path of report_bleu.zero-shot.many-many.laa.logs
+# --output_json_data denotes the path of the output json file
 bash scripts/opus-100/evaluation/multilingual_bleu_statistics.sh
 ```
-The evaluation for other models (e.g., token_src, token_tgt, lee) can be done in similar way, please refer `scripts/opus-100/evaluation` and `scripts/ted/evaluation` directories for more details.
+
+
+The evaluation for other models (e.g., token_src, token_tgt, lee) can be done in similar way, please refer `scripts/opus-100/evaluation` and `scripts/ted/evaluation` folders for more details.
 
 
 ## Citation
