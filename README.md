@@ -64,12 +64,12 @@ bash scripts/opus-100/evaluation/multilingual_bleu_statistics.sh
 
 # report the average BLEU score for each checkpoint
 # the checkpoints will be printed in descending order of average BLEU
-# the checkpoint with the highest average BLEU is chosen as the best checkpoint in our work
+# the checkpoint with the highest average BLEU was selected as the best checkpoint in our work
 bash scripts/opus-100/evaluation/get_best_checkpoint.sh
 ```
 
 
-3. Translate the test sets with the chosen checkpoint for both supervised and zero-shot translation
+3. Translate the test sets with the selected checkpoint for both supervised and zero-shot translation
 
 For supervised translation:
 ```bash
