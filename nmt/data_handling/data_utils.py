@@ -7,8 +7,6 @@ import json
 
 from typing import List, Optional, Any
 
-from nmt.tools import Converter
-
 
 def read_data(data_path: str, remove_chars: Optional[str]=None):
     with open(data_path, encoding="utf-8") as f:
@@ -74,18 +72,6 @@ def remove_empty_line(src_data: List[str], tgt_data: List[str]):
             all_data = list(filter(lambda item: len(item[0].strip()) > 0 and len(item[1].strip()) > 0, all_data))
             src_data, tgt_data = list(zip(*all_data))
     return src_data, tgt_data
-
-
-def cht_to_chs(line: str):
-    line = Converter("zh-hans").convert(line)
-    line.encode("utf-8")
-    return line
-
-
-def chs_to_cht(line: str):
-    line = Converter("zh-hant").convert(line)
-    line.encode("utf-8")
-    return line
 
 
 def cjk_deseg(text: str):

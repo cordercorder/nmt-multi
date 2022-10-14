@@ -1,7 +1,6 @@
 from .data_utils import (
     read_data, 
     write_data, 
-    cht_to_chs, 
     shuffle_corpus, 
     remove_duplicate_sentence, 
     cjk_deseg, 
@@ -24,7 +23,6 @@ from .data_utils import (
 __all__ = [
     "read_data",
     "write_data",
-    "cht_to_chs",
     "shuffle_corpus",
     "remove_duplicate_sentence",
     "cjk_deseg",
