@@ -13,6 +13,7 @@
  - Python >= 3.7
  - PyTorch >= 1.6.0
  - Fairseq with [commit ID d3890e5](https://github.com/facebookresearch/fairseq/tree/d3890e593398c485f6593ab8512ac51d37dedc9c)
+ - sacrebleu < 2.0
 
 
 ## Fairseq Installation
@@ -35,6 +36,13 @@ We provide script examples to run the pipeline described above for preprocessing
 scripts/ted/data_process/multilingual_preprocess.sh
 scripts/opus-100/data_process/multilingual_preprocess.sh
 ```
+
+**Note that please insert the path of `nmt-multi` directory to the [inport path](https://docs.python.org/3/glossary.html#term-import-path) before executing these shell scripts to make Python interpreter aware of the `nmt` package.** There is an example below:
+``` bash
+# modify the environment variable PYTHONPATH
+export PYTHONPATH=/path/to/nmt-multi:${PYTHONPATH}
+```
+
 
 ## Model Training
 Once the data has been preprocessed, the multilingual neural machine translation models can be trained with the shell scripts in the `scripts/opus-100/train` and `scripts/ted/train` folders. Note that please set the variables in these scripts properly before executing them:
