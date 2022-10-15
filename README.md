@@ -1,6 +1,6 @@
 # Informative Language Representation Learning for Massively Multilingual Neural Machine Translation.
 
-[**Paper**](https://arxiv.org/abs/2209.01530) |
+[**Paper**](https://aclanthology.org/2022.coling-1.458/) |
 [**Requirements**](#Requirements) |
 [**Fairseq Installation**](#Fairseq-Installation) |
 [**Data Preprocessing**](#Data-Preprocessing) |
@@ -114,14 +114,40 @@ The evaluation for other models (e.g., token_src, token_tgt, lee) can be done in
 ## Citation
 
 ```
-@misc{https://doi.org/10.48550/arxiv.2209.01530,
-  doi = {10.48550/ARXIV.2209.01530},
-  url = {https://arxiv.org/abs/2209.01530},
-  author = {Jin, Renren and Xiong, Deyi},
-  keywords = {Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {Informative Language Representation Learning for Massively Multilingual Neural Machine Translation},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {arXiv.org perpetual, non-exclusive license}
+@inproceedings{DBLP:conf/coling/JinX22,
+  author    = {Renren Jin and
+               Deyi Xiong},
+  editor    = {Nicoletta Calzolari and
+               Chu{-}Ren Huang and
+               Hansaem Kim and
+               James Pustejovsky and
+               Leo Wanner and
+               Key{-}Sun Choi and
+               Pum{-}Mo Ryu and
+               Hsin{-}Hsi Chen and
+               Lucia Donatelli and
+               Heng Ji and
+               Sadao Kurohashi and
+               Patrizia Paggio and
+               Nianwen Xue and
+               Seokhwan Kim and
+               Younggyun Hahm and
+               Zhong He and
+               Tony Kyungil Lee and
+               Enrico Santus and
+               Francis Bond and
+               Seung{-}Hoon Na},
+  title     = {Informative Language Representation Learning for Massively Multilingual
+               Neural Machine Translation},
+  booktitle = {Proceedings of the 29th International Conference on Computational
+               Linguistics, {COLING} 2022, Gyeongju, Republic of Korea, October 12-17,
+               2022},
+  pages     = {5158--5174},
+  publisher = {International Committee on Computational Linguistics},
+  year      = {2022},
+  url       = {https://aclanthology.org/2022.coling-1.458},
+  timestamp = {Thu, 13 Oct 2022 17:29:38 +0200},
+  biburl    = {https://dblp.org/rec/conf/coling/JinX22.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 ```
