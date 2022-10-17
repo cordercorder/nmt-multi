@@ -19,7 +19,7 @@
 ## Fairseq Installation
 We build the multilingual neural machine translation models based on Fairseq library. Please install it first:
 ```bash
-cd fairseq
+cd fairseq_dir
 pip install -e ./
 ```
 
