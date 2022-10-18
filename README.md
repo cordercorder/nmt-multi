@@ -37,6 +37,9 @@ scripts/ted/data_process/multilingual_preprocess.sh
 scripts/opus-100/data_process/multilingual_preprocess.sh
 ```
 
+There is an artificial English tag \_\_en\_\_ prepended to every non-English sentence in the raw TED-59 dataset, which may affect model training and bias BLEU. Please execute `scripts/ted/data_process/remove_start_token.sh` to remove this tag before the preprocessing pipeline for TED-59 dataset (`scripts/ted/data_process/multilingual_preprocess.sh`).
+
+
 **Note that please insert the path of `nmt-multi` directory to the [inport path](https://docs.python.org/3/glossary.html#term-import-path) before executing these shell scripts to make Python interpreter aware of the `nmt` package.** There is an example below:
 ``` bash
 # modify the environment variable PYTHONPATH
