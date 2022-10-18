@@ -166,7 +166,7 @@ for lang_pair in `ls ${spm_corpus_dir}`; do
 done
 
 # remove duplicated langs
-lang_sets=$(python -c "print('\n'.join(set('${lang_sets}'.split())))")
+lang_sets=$(python -c "print(' '.join(set('${lang_sets}'.split())))")
 lang_sets=${lang_sets// /\\n}
 
 echo -e ${lang_sets} > ${root_data_dir}/lang_dict.txt
