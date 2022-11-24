@@ -26,7 +26,8 @@ python -m torch.distributed.launch --nproc_per_node=${n_process} \
     $(which fairseq-train) ${data_bin_dir} \
     --user-dir ${project_dir}/nmt/user_dir \
     --task translation_multi_simple_epoch_enable_lang_id \
-    --arch transformer \
+    --arch transformer_laa \
+    --enable-tgt-lang-ids \
     --layernorm-embedding \
     --add-lang-aware-attention-to-decoder-self-attention \
     --sampling-method "temperature" \
